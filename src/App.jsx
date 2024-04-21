@@ -5,6 +5,7 @@ import authService from "./appwrite/auth"
 import {login, logout} from "./store/authSlice"
 import { Footer, Header } from './components'
 import { Outlet } from 'react-router-dom'
+import Loading from './components/Loading'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -27,12 +28,12 @@ function App() {
       <div className='w-full block'>
         <Header />
         <main>
-        TODO:  <Outlet />
+        TWEETS:  <Outlet />
         </main>
         <Footer />
       </div>
     </div>
-  ) : null
+  ) : <Loading/>
 }
 
 export default App
